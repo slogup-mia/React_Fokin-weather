@@ -20,8 +20,8 @@ Learning React Native by Building a Foking Weather App
         - RN의 Geolocation API를 통해서 : 모바일 현위치, 위치변화, clearWatch 등 기본만 지원
         - Expo의 Location SDK에서 : 위의 기본 + 서비스가능여부, GPS네트워크 여부, 주소를 위경도로 변환, 특정 지역에 사용자가 접근하거나 떠난 시점을 캐치하는 등의 데이터를 얻을 수 있다. 
     - Expo API는 디폴트로 인스톨되어있지 않으므로, 필요한 라이브러리를 인스톨해야한다.
-    - # `expo install expo-location`  
--[ ] \#1.3 Asking for Permissions <br/>
+    - `expo install expo-location`  
+-[x] \#1.3 Asking for Permissions <br/>
 -[ ] \#1.4 Getting the Weather <br/>
 
 ## 2. STYLE
