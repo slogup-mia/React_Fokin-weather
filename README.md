@@ -22,6 +22,6 @@ Learning React Native by Building a Foking Weather App
     - Expo API는 디폴트로 인스톨되어있지 않으므로, 필요한 라이브러리를 인스톨해야한다.
     - `expo install expo-location`  
 -[x] \#1.3 Asking for Permissions <br/>
--[ ] \#1.4 Getting the Weather <br/>
+-[x] \#1.4 Getting the Weather <br/>
 
 ## 2. STYLE

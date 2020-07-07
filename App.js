@@ -3,27 +3,30 @@ import {Alert} from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 // `expo install expo-location`
+import axios from 'axios';
+
+const API_KEY = '35d7ea6816613e610b70081fa5ecc227';
 
 export default class extends React.Component {
   state = {
     isLoading: true
   };
+
+  getWeather = async (latitude, longitude) => {
+    const {data} = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
+    console.log(data)
+  }
+
+
   getLocation = async () => {
     try {
       await Location.requestPermissionsAsync();
 
-      // 아래 ES6 문법을 사용한 여러 데이터 접근 방법을 숙지하자
-      // 1.
-        // const location = await Location.getCurrentPositionAsync();
-        // console.log(location)
-      // 2.
-        // const { coords } = await Location.getCurrentPositionAsync();
-        // console.log(coords.latitude, coords.longitude)
-      // 3.
       const { coords : {latitude, longitude} } = await Location.getCurrentPositionAsync();
-      console.log(latitude, longitude)
+      // console.log(latitude, longitude)
 
       this.setState({isLoading: false})
+      this.getWeather(latitude, longitude)
     } catch (error) {
       Alert.alert("Can't find you", 'So Sad');
     }
