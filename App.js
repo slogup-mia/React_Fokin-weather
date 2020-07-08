@@ -5,7 +5,7 @@ import axios from 'axios';
 import { API_KEY } from 'react-native-dotenv';
 
 import Loading from "./Loading";
-import Weather from "./weather";
+import Weather from "./Weather";
 
 
 export default class extends React.Component {
@@ -14,10 +14,11 @@ export default class extends React.Component {
   };
 
   getWeather = async (latitude, longitude) => {
-    const {data} = await axios.get(
+    // 아래 JSON object DOM에서 object를 추출하는 ES6 문법을 확인해보자
+    const {data : { main: {temp}, weather }  } = await axios.get(
         `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`)
     console.log(data)
-    this.setState({isLoading:false, temp:data.main.temp, condition:data.weather[0].main})
+    this.setState({isLoading:false, temp:temp, condition: weather[0].main})
   }
 
 

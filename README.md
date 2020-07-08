@@ -30,4 +30,8 @@ Learning React Native by Building a Foking Weather App
 -[x] \#2.2 Icons and Styling <br/>
 -[x] \#2.3 Background Gradient <br/>
 -[x] \#2.4 Titles and Subtitles <br/>
--[ ] \#2.5 Conclusions <br/>
+-[x] \#2.5 Conclusions <br/>
+    - App 완성 후 퍼블리싱 하려면, 
+        - expo localhost pannel 에서 Publish or republish proj  
+        - 생성된 QR코드를 인식하면, expo App 내에서 구동된다!   
+        

@@ -13,14 +13,14 @@ import { LinearGradient } from 'expo-linear-gradient';
     // 그라디언트 만들기 :
 
 const weatherOptions = {
-    Thunderstorm : { iconName : 'weather-lightning', colors: ['#636363','#a2ab58']},
+    Thunderstorm : { iconName : 'weather-lightning', colors: ['#636363','#a2ab58'], subtitle:"Just Don't go outside"},
     Drizzle : { iconName : 'weather-hail', colors: ['#74ebd5','#ACB6E5']},
     Rain : { iconName : 'weather-rainy', colors: ['#36D1DC','#5B86E5']},
-    Snow : { iconName : 'weather-snowy', colors: ['#E0EAFC','#CFDEF3']},
+    Snow : { iconName : 'weather-snowy', colors: ['#E0EAFC','#CFDEF3'], subtitle:"Do you wanna build a snowman? No."},
     Mist : { iconName : 'weather-fog', colors: ['#ada996','#f2f2f2','#dbdbdb','#eaeaea']},
     Smoke : { iconName : 'weather-fog', colors: ['#616161','#9bc5c3']},
     Haze : { iconName : 'weather-hazy', colors: ['#77A1D3','#79CBCA','#E684AE']},
-    Dust : { iconName : 'weather-hazy', colors: ['#649173','#DBD5A4']},
+    Dust : { iconName : 'weather-hazy', colors: ['#649173','#DBD5A4'], subtitle:"What the China"},
     Fog : { iconName : 'weather-fog', colors: ['#283048','#859398']},
     Sand : { iconName : 'weather-hazy', colors: ['#3E5151','#DECBA4']},
     Ash : { iconName : 'weather-hazy', colors: ['#606c88','#3f4c6b']},
