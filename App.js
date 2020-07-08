@@ -5,6 +5,7 @@ import * as Location from "expo-location";
 // `expo install expo-location`
 import axios from 'axios';
 import { API_KEY } from 'react-native-dotenv'
+import Weather from "./weather";
 
 
 export default class extends React.Component {
@@ -13,8 +14,9 @@ export default class extends React.Component {
   };
 
   getWeather = async (latitude, longitude) => {
-    const {data} = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
+    const {data} = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`)
     console.log(data)
+    this.setState({isLoading:false, temp:data.main.temp})
   }
 
 
@@ -39,9 +41,9 @@ export default class extends React.Component {
   }
 
   render() {
-    return <Loading />;
-    const {isLoading} = this.state;
-    return isLoading ? <Loading/> : null;
+    // return <Loading />;
+    const {isLoading, temp} = this.state;
+    return isLoading ? <Loading/> : <Weather temp={ Math.floor(temp) }/>;
   }
 }
 
