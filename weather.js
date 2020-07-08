@@ -25,8 +25,8 @@ const weatherOptions = {
     Sand : { iconName : 'weather-hazy', colors: ['#3E5151','#DECBA4']},
     Ash : { iconName : 'weather-hazy', colors: ['#606c88','#3f4c6b']},
     Squall : { iconName : 'weather-tornado', colors: ['#2980B9','#6DD5FA','#ffffff']},
-    Tornado : { iconName : 'weather-hurricane', colors: ['#4B79A1','#283E51']},
-    Clear : { iconName : 'weather-sunny', colors: ['#2980B9','#6DD5FA','#ffffff']},
+    Tornado : { iconName : 'weather-hurricane', colors: ['#4B79A1','#283E51'] , subtitle:"Stay inside, Save yourself"},
+    Clear : { iconName : 'weather-sunny', colors: ['#2980B9','#6DD5FA','#ffffff'], subtitle:"Why do not Go out and Chill?"    },
     Clouds : { iconName : 'weather-cloudy', colors: ['#77A1D3','#79CBCA']},
 }
 
@@ -39,9 +39,11 @@ export default function Weather({temp, condition}){
                 <View style={styles.halfContainer}>
                     <MaterialCommunityIcons name={weatherOptions[condition].iconName} size={120} color='white'/>
                     <Text style={styles.temp}>{temp}°C</Text>
-                    <Text style={{color: 'white'}}>{condition}</Text>
                 </View>
-                <View style={styles.halfContainer}>
+                {/* 여러 style을 적용할 때 아래와 같이 사용  */}
+                <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
+                    <Text style={styles.title}>{ condition }</Text>
+                    <Text style={styles.subtitle}>{ weatherOptions[condition].subtitle || 'Check Weather, Have a nice day ' }</Text>
                 </View>
             </LinearGradient>
     )
@@ -68,6 +70,21 @@ const styles = StyleSheet.create({
     temp:{
         fontSize:48,
         color: 'white'
+    },
+    title:{
+        color:"white",
+        fontSize: 44,
+        fontWeight: "300",
+        marginBottom: 10
+    },
+    subtitle:{
+        color:"white",
+        fontWeight: "600",
+        fontSize: 24
+    },
+    textContainer:{
+        paddingHorizontal:20,
+        alignItems: 'flex-start'
     }
 });
 

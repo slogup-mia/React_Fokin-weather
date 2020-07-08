@@ -29,5 +29,5 @@ Learning React Native by Building a Foking Weather App
 -[x] \#2.1 Getting the Condition Names <br/>
 -[x] \#2.2 Icons and Styling <br/>
 -[x] \#2.3 Background Gradient <br/>
--[ ] \#2.4 Titles and Subtitles <br/>
+-[x] \#2.4 Titles and Subtitles <br/>
 -[ ] \#2.5 Conclusions <br/>
