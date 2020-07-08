@@ -1,10 +1,10 @@
 import React from 'react';
 import {Alert} from "react-native";
-import Loading from "./Loading";
 import * as Location from "expo-location";
-// `expo install expo-location`
 import axios from 'axios';
-import { API_KEY } from 'react-native-dotenv'
+import { API_KEY } from 'react-native-dotenv';
+
+import Loading from "./Loading";
 import Weather from "./weather";
 
 
