@@ -4,8 +4,8 @@ import Loading from "./Loading";
 import * as Location from "expo-location";
 // `expo install expo-location`
 import axios from 'axios';
+import { API_KEY } from 'react-native-dotenv'
 
-const API_KEY = '35d7ea6816613e610b70081fa5ecc227';
 
 export default class extends React.Component {
   state = {
